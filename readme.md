@@ -5,6 +5,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 ## Upcomming features/changes
 > i'm currently maintaining the dynamic menu because right now you might as well take it <br>
 > to a italian restaurant and give it to the chef to serve it with the house specialty sauce 
+<br>
 
 ## Last changelog 
 > \+ = added, - = removed, ~ = changed
