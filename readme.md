@@ -5,14 +5,14 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 ## Upcomming features/changes
 > i'm currently maintaining the dynamic menu because right now you might as well take it <br>
 > to a italian restaurant and give it to the chef to serve it with the house specialty sauce 
-<br>
+<br>a
 
 ## Last changelog 
-> \+ = added, - = removed, ~ = changed
+> \+ added, - removed, ~ changed
 >
 > ### 5 Pixel CMS Base v0.1
 >
->     + the basic folder structure for the dinamic menu
+>     + the basic folder structure for the dynamic menu
 >     + a role based login/register system to separate 
 >       visitors from users and users from admin or mods (mods don't exist by default) 
 >     + easy to use template
@@ -67,7 +67,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 ## From project to plugin
-> if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base <br> you should check out these page's for transforming the project
+> if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base you should check out these page's for transforming the project
 >
 > bs v4.x all classes: <br>
 > https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp
@@ -80,38 +80,38 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 ## Create a plugin (site page)
 >
 > ### Intro
-> Because the 5 Pixel CMS Base uses a dinamic menu its quite easy to <br> 
+> Because the 5 Pixel CMS Base uses a dinamic menu its quite easy to
 > add/create a new plugin.
 >
 > ### Step 1
-> Go to 'root-folder/src/plugins/cms/' within the cms folder you will <br> 
+> Go to 'root-folder/src/plugins/cms/' within the cms folder you will
 > find a folder called template the folder its self is te base of the plugin
 > 
 > ### Step 2
-> Copy the template folder now go back to 'root-folder/src/plugins' and <br> 
-> paste it either in the site or cms or both if you want to make some thing <br> 
-> that is used by the user and the admin for instance when you want the <br>
-> user or visitor to leave a message on a contact page and the admin <br>
+> Copy the template folder now go back to 'root-folder/src/plugins' and 
+> paste it either in the site or cms or both if you want to make some thing
+> that is used by the user and the admin for instance when you want the
+> user or visitor to leave a message on a contact page and the admin
 > to read the submitted message within the cms
 >
 > ### Step 3
-> change the name of the folder because the template folder is ignored <br> when creating menu buttons by default
+> change the name of the folder because the template folder is ignored when creating menu buttons by default
 >
 > ### Step 4
 > in this folder there are a couple of files including a index.php file <br>
 >
 > <strong><em>!!! its really important that you don't change the name of this file !!!</em></strong><br> 
 >
-> NOTE: if you do want to change the name of the main file of the <br> 
-> plugin you will need to change the name of every main file of each plugin <br> 
-> and you need to change the called file in the 1_menu.php file you can find <br> 
+> NOTE: if you do want to change the name of the main file of the 
+> plugin you will need to change the name of every main file of each plugin 
+> and you need to change the called file in the 1_menu.php file you can find 
 > this file within 'root-folder/src/base/'.
 >
 > ### Step 5 
 > Open the index.php file there you will find this code...
 > 
 > #### Head tag
-> within the first included file '0_head.php' below you will find the  <br>
+> within the first included file '0_head.php' below you will find the
 > opening html & body tag you will also find the cdns here
 >
 > the closing head tag is placed in this file so you can add optional 
@@ -121,9 +121,9 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 > - title icon
 > - meta tags 
 >
-> the reason for placing meta tags here is because when the site is   <br>
-> effectively used you probably don't want the cms dashboard to be  <br>
-> found on google even though there are options to prevent visitors  <br>
+> the reason for placing meta tags here is because when the site is
+> effectively used you probably don't want the cms dashboard to be
+> found on google even though there are options to prevent visitors
 > from entering the cms
 >   
 >     <?php include_once '../../../base/0_head.php'; ?>
@@ -138,7 +138,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >
 > #### Body tag
 > ##### Section 1
-> Here you will find the title thats inside the header of the  <br>
+> Here you will find the title thats inside the header of the
 > page change 'Plugin Name' to your plugin name
 >
 >     <div class="row bg-dark text-white">
@@ -152,18 +152,18 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     </div>
 >
 > ##### Section 2
-> The first column of the second row in the body tag is placed <br> within the '1_menu.php' file
+> The first column of the second row in the body tag is placed within the '1_menu.php' file
 >
 >     <div class="row">
 >         <?php include_once '../../../base/1_menu.php'; ?>
 >
 > ### Section 3
-> Within the second column you should place the content of <br> the plugin you want to write 
+> Within the second column you should place the content of the plugin you want to write 
 >
-> NOTE: when you place the content of your plugin within a  <br>
-> separate file that you are going to include here you'll  <br>
-> need to start the first div tag with a row class since  <br>
-> your inside a div tag with a col class <br>
+> NOTE: when you place the content of your plugin within a
+> separate file that you are going to include here you'll
+> need to start the first div tag with a row class since
+> your inside a div tag with a col class
 >
 >         <div class="col-10">
 >             <!-- content -->
@@ -173,7 +173,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 ## Changelog history 
-> \+ = added, - = removed, ~ = changed
+> \+ added, - removed, ~ changed
 >
 > ### 5 Pixel CMS Base v0.1
 >
