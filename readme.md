@@ -114,7 +114,8 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 > within the first included file '0_head.php' below you will find the
 > opening html & body tag you will also find the cdns here
 >
-> the closing head tag is placed in this file so you can add optional 
+> the closing head tag is placed in the main file of a plugin so you can add optional 
+>
 > - js files
 > - css files  
 > - title 
@@ -157,7 +158,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     <div class="row">
 >         <?php include_once '../../../base/1_menu.php'; ?>
 >
-> ### Section 3
+> ##### Section 3
 > Within the second column you should place the content of the plugin you want to write 
 >
 > NOTE: when you place the content of your plugin within a
