@@ -1,0 +1,12 @@
+/* 
+
+    write styling for current plugin here
+
+    there is no global styling file accept 
+    for the one bootstrap uses. this one is 
+    placed under the bootstrap cdn link in 
+    the index file so the styling placed here 
+    will overwrite the styling that the bootstrap 
+    cdn link contains. keep this in mind!
+
+*/
