@@ -2,7 +2,7 @@
 The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
 <br>
 
-# Upcoming features/changes
+### Upcoming features/changes
 > A check within the head tag to see if a user is logged in there is a possibility that there are comming 2 seperate template files one for the site and one for the cms but im gonna try my best to make this not happen! 
 <br>
 
