@@ -28,7 +28,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 > ## Library's
 > - Bootstrap v5.0.0 beta3 | **[Docs](https://getbootstrap.com/docs/5.0/)**
 > - jQuery v3.6.0 | **[Docs](https://api.jquery.com/)**
-> - Font Awesome v5.15.1 | **[Docs](Docs: https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)**
+> - Font Awesome v5.15.1 | **[Docs](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)**
 <br>
 
 # Installation guide
