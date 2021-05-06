@@ -1,179 +1,105 @@
-<div class="col-2">
+<?php
 
-    <div class="row text-center justify-content-center py-3 bg-dark">
+    // name of the main file within a plugin folder
+    $mainFile = '/index.php">';
 
-        <?php
-            
-            // array with plugins directory paths
-            $pluginDirs = array('../../cms/', '../../site/');
+    // html of the button
+    $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
+    $endBtn = '</a></div>';
 
-            if (isset($_SESSION['id'])) {
+    // assigns bool, true when client is logged in
+    $id = isset($_SESSION['id']);
+    $loggedIn = true;
+    $loggedOut = false;
 
-                $remove = array('register', 'login', 'template');
+    // assigns bool, true when client role is higher then 0
+    $role = isset($_SESSION['uRole']);
+    $isAdmin = true;
+    $isUser = false;
 
-                if (isset($_SESSION['uRole'])) {
-    
-                    // do something for each plugins directory
+    // array with plugins directory paths
+    $pluginDirs = array('../../cms/', '../../site/');
+    $cmsDir = 0;
+    $siteDir = 1;
+
+    // array with plugin names it need to ignore when logged in
+    $removeForUser = array('register', 'login', 'template');
+    // array with plugin names it need to ignore when logged in
+    $removeForVisitor = array('logout', 'template');
+    $dontAddPlugin = true;
+
+    // gets all the plugin folders form given directory
+    function getPlugins($pluginDir) {
+        $plugins = scandir($pluginDir);
+        $plugins = array_diff($plugins, array('.', '..'));
+
+        return $plugins;
+    }
+
+    // the code that creates the menu with the variables & function above
+    switch ($id) {
+        case $loggedIn:
+            switch ($role) {
+                case $isAdmin:
                     foreach ($pluginDirs as $pluginsDirKey => $pluginDir) {
-                        
-                        // scan current plugin directory
-                        $dirScanResult = scandir($pluginDir);
-        
-                        // remove the . & .. from the start of the array
-                        $dirScanResult = array_diff($dirScanResult, array('.', '..'));
-                        
-                        // switch if case matches key of current plugin directory
                         switch ($pluginsDirKey) {
-        
-                            case 0:
-        
-                                echo '<h3 class="text-light">CMS Plugins</h3>';
-        
-                                // do something for each plugin
-                                foreach ($dirScanResult as $cmsPluginKey => $cmsPlugin) {
-                                    
-                                    if (!in_array($cmsPlugin, $remove)) {
+                            case $cmsDir:
 
-                                        echo '<div class="col-11">';
-                                            // change this line to change the button style
-                                            echo '<a class="btn btn-warning w-100 mb-2" href="../../cms/' . $cmsPlugin . '/index.php">' . $cmsPlugin . '</a>';
-                                        echo '</div>';
-                    
-                                    } else {
+                                foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                                        continue;
+                                    $removeCheck = in_array($plugin, $removeForUser);
+                                    if ($removeCheck == $dontAddPlugin) continue;
 
-                                    }
-                
+                                    $link = $pluginDir . $plugin . $mainFile;
+                                    $completeButton = $startBtn . $link . $plugin . $endBtn;
+                                    echo $completeButton;
                                 }
-        
                             break;
-                            case 1:
-        
-                                echo '<h3 class="text-light">Site Plugins</h3>';
-        
-                                // do something for each plugin
-                                foreach ($dirScanResult as $sitePluginKey => $sitePlugin) {
-                                        
-                                    if (!in_array($sitePlugin, $remove)) {
+                            case $siteDir:
 
-                                        echo '<div class="col-11">';
-                                            // change this line to change the button style
-                                            echo '<a class="btn btn-warning w-100 mb-2" href="../../site/' . $sitePlugin . '/index.php">' . $sitePlugin . '</a>';
-                                        echo '</div>';
-                    
-                                    } else {
+                                foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                                        continue;
+                                    $removeCheck = in_array($plugin, $removeForUser);
+                                    if ($removeCheck == $dontAddPlugin) continue;
 
-                                    }
-
+                                    $link = $pluginDir . $plugin . $mainFile;
+                                    $completeButton = $startBtn . $link . $plugin . $endBtn;
+                                    echo $completeButton;
                                 }
-        
                             break;
-        
                         }
-        
                     }
-    
-                } else {
-    
-                    // do something for each plugins directory
-                    foreach ($pluginDirs as $pluginsDirKey => $pluginDir) {
-                        
-                        // scan current plugin directory
-                        $dirScanResult = scandir($pluginDir);
-        
-                        // remove the . & .. from the start of the array
-                        $dirScanResult = array_diff($dirScanResult, array('.', '..'));
-                        
-                        // switch if case matches key of current plugin directory
-                        switch ($pluginsDirKey) {
-        
-                            case 0:
-                                break;
-                            case 1:
-        
-                                echo '<h3 class="text-light">Site Plugins</h3>';
-        
-                                // do something for each plugin
-                                foreach ($dirScanResult as $sitePluginKey => $sitePlugin) {
-                                    
-                                    if (!in_array($sitePlugin, $remove)) {
+                break;
+                case $isUser:
+                    foreach ($pluginDirs as $pluginDirKey => $pluginDir) {
+                        if ($pluginDirKey == $cmsDir) continue;
 
-                                        echo '<div class="col-11">';
-                                            // change this line to change the button style
-                                            echo '<a class="btn btn-warning w-100 mb-2" href="../../site/' . $sitePlugin . '/index.php">' . $sitePlugin . '</a>';
-                                        echo '</div>';
-                    
-                                    } else {
+                        foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                                        continue;
+                            $removeCheck = in_array($plugin, $removeForUser);
+                            if ($removeCheck == $dontAddPlugin) continue;
 
-                                    }
-                    
-                                }
-        
-                            break;
-        
+                            $link = $pluginDir . $plugin . $mainFile;
+                            $completeButton = $startBtn . $link . $plugin . $endBtn;
+                            echo $completeButton;
                         }
-        
                     }
-    
-                }
-
-            } else {
-
-                $remove = array('logout', 'template');
-
-                // do something for each plugins directory
-                foreach ($pluginDirs as $pluginsDirKey => $pluginDir) {
-                    
-                    // scan current plugin directory
-                    $dirScanResult = scandir($pluginDir);
-    
-                    // remove the . & .. from the start of the array
-                    $dirScanResult = array_diff($dirScanResult, array('.', '..'));
-                    
-                    // switch if case matches key of current plugin directory
-                    switch ($pluginsDirKey) {
-    
-                        case 0:
-                            break;
-                        case 1:
-    
-                            echo '<h3 class="text-light">Site Plugins</h3>';
-    
-                            // do something for each plugin
-                            foreach ($dirScanResult as $sitePluginKey => $sitePlugin) {
-                                
-                                if (!in_array($sitePlugin, $remove)) {
-
-                                    echo '<div class="col-11">';
-                                        // change this line to change the button style
-                                        echo '<a class="btn btn-warning w-100 mb-2" href="../../site/' . $sitePlugin . '/index.php">' . $sitePlugin . '</a>';
-                                    echo '</div>';
-                
-                                } else {
-
-                                    continue;
-
-                                }
-
-                            }
-    
-                        break;
-    
-                    }
-    
-                }
-
+                break;
             }
-            
-        ?>
-    
-    </div>
-    
-</div>
+        break;
+        case $loggedOut:
+            foreach ($pluginDirs as $pluginDirKey => $pluginDir) {
+                if ($pluginDirKey == $cmsDir) continue;
 
-    
+                foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
+
+                    $removeCheck = in_array($plugin, $removeForVisitor);
+                    if ($removeCheck == $dontAddPlugin) continue;
+
+                    $link = $pluginDir . $plugin . $mainFile;
+                    $completeButton = $startBtn . $link . $plugin . $endBtn;
+                    echo $completeButton;
+                }
+            }
+        break;
+    }

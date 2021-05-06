@@ -1,20 +1,16 @@
-<?php 
-    include_once '../../../base/0_head.php';
-?>
+<?php include_once '../../../base/0_head.php'; ?>
 
         <title>5 Pixel CMS</title>
 
     </head>
     <body class="bg-secondary">
-
         <div class="row bg-dark text-white me-0">
-
             <div class="col-12 py-2 ps-4" id="header">
-
                 <h1>5 Pixel CMS - Register Page</h1>
-
             </div>
-        
+            <div class="col-12">
+                <?php include_once '../../../inc/err.msg.php'; ?>
+            </div>
         </div>
         <section class="row justify-content-around bg-warning me-0">
 
@@ -43,19 +39,11 @@
                         </div>
                         
                     </div>
-                    <div class="col-12">
-
-                        <?php
-
-                            include_once '../../../inc/err.msg.php';
-                            
-                        ?>
-                        
-                    </div>
 
                 </form>
 
             </div>
 
-
         </section>
+    </body>
+</html>

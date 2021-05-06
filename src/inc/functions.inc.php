@@ -115,39 +115,3 @@
         mysqli_stmt_close($stmt);
 
     }
-
-    // gets all the plugin folders used for the cms
-    function getPlugins($plugins_directory) {
-
-        $plugins = scandir($plugins_directory);
-
-        $plugin_folders_array = array_diff($plugins, array('.', '..'));
-
-        return $plugin_folders_array;
-
-    }
-
-    function includeCmsMenuButtons($exclude) {
-        $cms_plugins_folder = '../cms/plugins/';
-
-        foreach (getPlugins($cms_plugins_folder) as $key => $plugin_folder_name) {
-            if (!in_array($plugin_folder_name, $exclude)) {
-                include $cms_plugins_folder . $plugin_folder . '/menu.btn.php';
-            } else {
-                continue;
-            }
-        }
-    }
-
-    // gets all the plugin folders used for the site
-    function includeSiteMenuButtons($exclude) {
-        $site_plugins_folder = '../cms/plugins/';
-
-        foreach (getPlugins($site_plugins_folder) as $key => $plugin_folder_name) {
-            if (!in_array($plugin_folder_name, $exclude)) {
-                include $site_plugins_folder . $plugin_folder . '/menu.btn.php';
-            } else {
-                continue;
-            }
-        }
-    }
