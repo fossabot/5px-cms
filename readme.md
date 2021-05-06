@@ -3,7 +3,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 ### Upcoming features/changes
-> A couple of checks within the head tag to redirect from cms on curtain conditions
+> Better password encryption
 <br>
 
 # Readme content
