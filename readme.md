@@ -2,19 +2,63 @@
 The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
 <br>
 
-# readme content
-> - readme content
-> - Upcoming features/changes
-> - Last changelog
-> - Installation guide
-> - Languages/Library's used
-> - From project to plugin
-> - Create a plugin (site page)
-> - Changelog history
-<br>
-
 # Upcoming features/changes
 > A check within the head tag to see if a user is logged in there is a possibility that there are comming 2 seperate template files one for the site and one for the cms but im gonna try my best to make this not happen! 
+<br>
+
+# readme content
+- Upcoming features/changes
+- readme content
+- Languages/Library's used
+- Installation guide
+- Last changelog>
+- Create a plugin (site page)
+- Change your project to a plugin
+- Changing the main file and button style of the plugins
+- Changelog history
+<br>
+
+# Languages/Library's used
+> ## Languages
+> - html 5
+> - css 3
+> - php v7.4.2
+>
+> ## Library's
+> - Bootstrap v5.0.0 beta3
+>     - Docs: https://getbootstrap.com/docs/5.0/
+> - jQuery v3.6.0
+>    - Docs: https://api.jquery.com/
+> - Font Awesome v5.15.1
+>    - Docs: https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use
+<br>
+
+# Installation guide
+> ## Step 1
+> create a folder within your xampp workspace or other services
+> ## Step 2
+> do a pull request or place the unzipped contents of the folder here
+> ## Step 3
+> create a database by default the database name the site calls is called '5_pixel_cms' 
+> ## Step 4
+> import the 'database.sql' file in the database you just created
+> ## Step 5
+> go within your workspace to 'root-folder/src/inc/dbh.inc.php' 
+> ## Step 6
+> here you will find default login credentials to the database and the database name used change it if yours are different
+>
+>     $serverName = "127.0.0.1";
+>     $dbUsername = "root";
+>     $dbPassword = "";
+>     $dbName = "5_pixel_cms";
+>
+> ## Step 7
+> after you have done this start your local server if not already done and redirect to 'https://localhost/root-folder/index.php'
+> ## Step 8
+> now you are on the home page of the website where visitors and user can see to be able to enter the cms login with the following login credentials
+>
+>     username: Admin
+>     password: Admin123
 <br>
 
 # Last changelog (\+ added, - removed, ~ changed)
@@ -67,59 +111,6 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     +     </div>
 >       </div>
 >  
-<br>
-
-# Installation guide
-> ## Step 1
-> create a folder within your xampp workspace or other services
-> ## Step 2
-> do a pull request or place the unzipped contents of the folder here
-> ## Step 3
-> create a database by default the database name the site calls is called '5_pixel_cms' 
-> ## Step 4
-> import the 'database.sql' file in the database you just created
-> ## Step 5
-> go within your workspace to 'root-folder/src/inc/dbh.inc.php' 
-> ## Step 6
-> here you will find default login credentials to the database and the database name used change it if yours are different
->
->     $serverName = "127.0.0.1";
->     $dbUsername = "root";
->     $dbPassword = "";
->     $dbName = "5_pixel_cms";
->
-> ## Step 7
-> after you have done this start your local server if not already done and redirect to 'https://localhost/root-folder/index.php'
-> ## Step 8
-> now you are on the home page of the website where visitors and user can see to be able to enter the cms login with the following login credentials
->
->     username: Admin
->     password: Admin123
-<br>
-
-# Languages/Library's used
-> ## Languages
-> - html 5
-> - css 3
-> - php v7.4.2
->
-> ## Library's
-> - Bootstrap v5.0.0 beta3
->     - Docs: https://getbootstrap.com/docs/5.0/
-> - jQuery v3.6.0
->    - Docs: https://api.jquery.com/
-> - Font Awesome v5.15.1
->    - Docs: https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use
-<br>
-
-# Change your project to plugin
-> if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base you should check out these page's for transforming the project
->
-> bs v4.x all classes: <br>
-> https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp
->
-> bs v3.x all classes: <br>
-> https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
 <br>
 
 # Create a plugin (site page)
@@ -211,6 +202,16 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 > your inside a div tag with a col class
 <br>
 
+# Change your project to a plugin
+> if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base you should check out these page's for transforming the project
+>
+> bs v4.x all classes: <br>
+> https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp
+>
+> bs v3.x all classes: <br>
+> https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
+<br>
+
 # Changing the main file and button style of the plugins
 > ## Step 1 
 > Go to 'root-folder/base/' and op the 1_menu.php 
@@ -231,7 +232,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 
 # Changelog history (\+ added, - removed, ~ changed)
 >
-> ## 5 Pixel CMS Base v0.2
+> ## 5 Pixel CMS Base v0.2 - Changelog
 > ### 1_menu.php
 >
 >     + function from 'functions.inc.php'
@@ -280,7 +281,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     +     </div>
 >       </div>
 >  
-> ## 5 Pixel CMS Base v0.1
+> ## 5 Pixel CMS Base v0.1 - Changelog
 >
 >     + the basic folder structure for the dinamic menu
 >     + a role based login/register system to separate 
