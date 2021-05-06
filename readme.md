@@ -61,8 +61,8 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     password: Admin123
 <br>
 
-# Last changelog #### (\+ added, - removed, ~ changed)
-> ## 5 Pixel CMS Base v0.2
+# Last changelog
+> ## 5 Pixel CMS Base v0.2 (\+ added, - removed, ~ changed)
 > ### 1_menu.php
 >
 >     + function from 'functions.inc.php'
