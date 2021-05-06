@@ -183,7 +183,7 @@ base currently contains
 >
 <br>
 
-# Let menu ignore files when creating buttons
+# Let menu ignore directory's
 > ## Step 1 
 > Go to 'root-folder/base/' and open the '1_menu.php' file
 > ## Step 2
