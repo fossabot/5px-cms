@@ -1,5 +1,11 @@
 # <strong>5 Pixel Development CMS Base v0.3<strong>
 The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
+
+base currently contains
+- home page
+- cms dashboard
+- role-based login system
+- dynamic menu
 <br>
 
 ### Upcoming features/changes
@@ -156,7 +162,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 
 # Changing the main file name of plugins
 > ## Step 1 
-> Go to 'root-folder/base/' and op the 1_menu.php
+> Go to 'root-folder/base/' and open the '1_menu.php' file
 > ## Step 2
 > Here you will find the next code on line 4 $mainFile contains the name of the main file of any plugin
 > you can also change the bootstrap classes of the button or add your own classes when you want style them yourself
@@ -168,13 +174,25 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 
 # Changing the button style within the menu
 > ## Step 1 
-> Go to 'root-folder/base/' and op the 1_menu.php
+> Go to 'root-folder/base/' and open the '1_menu.php' file
 > ## Step 2
 > Here you will find the next code on line 7 & 8 $startBtn contains a div tag with the col bs class which in this case resizes the width of the button this variable also contains the a tag with the bs class btn which formats the basic styling of the button and the class btn-warning which formats the color of the button. then you'll see the w-100 class which in this case sets the button width to a 100% with of the parent in this case col-11 besides these classes it contains the mb-2 class for white space underneath the button.
 >
 >     $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
 >     $endBtn = '</a></div>';
 >
+<br>
+
+# Let menu ignore files when creating buttons
+> ## Step 1 
+> Go to 'root-folder/base/' and open the '1_menu.php' file
+> ## Step 2
+> on line 26 and 29 you'll find these 2 arrays
+>
+>     $removeForUser = array('register', 'login', 'template');
+>     $removeForVisitor = array('logout', 'template');
+>
+> Just add the name of the folder you have added to either the cms directory or the site directory and it wont show up when the menu is loaded
 <br>
 
 # Last changelog
