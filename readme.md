@@ -21,6 +21,7 @@ base currently contains
 - Change your project to a plugin **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#change-your-project-to-a-plugin)**
 - Changing the main file name of plugins **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changing-the-main-file-name-of-plugins)**
 - Changing the button style within the menu **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changing-the-button-style-within-the-menu)**
+- Let menu ignore directory's **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#let-menu-ignore-directorys)**
 - Last changelog **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#last-changelog)**
 - Changelog history **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changelog-history--added---removed--changed)**
 <br>
