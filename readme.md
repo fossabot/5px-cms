@@ -7,15 +7,15 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 # readme content
-- Upcoming features/changes
-- readme content
-- Languages/Library's used
-- Installation guide
-- Last changelog>
-- Create a plugin (site page)
-- Change your project to a plugin
-- Changing the main file and button style of the plugins
-- Changelog history
+- Upcoming features/changes **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#upcoming-featureschanges)**
+- Languages/Library's used **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#languageslibrarys-used)**
+- Installation guide **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#installation-guide)**
+- Last changelog **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#last-changelog)**
+- Create a plugin (site page) **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#create-a-plugin-site-page)**
+- Change your project to a plugin **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#change-your-project-to-a-plugin)**
+- Changing the main file name of plugins **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changing-the-main-file-name-of-plugins)**
+- Changing the button style within the menu **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changing-the-button-style-within-the-menu)**
+- Changelog history **[GoTo](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changelog-history--added---removed--changed)**
 <br>
 
 # Languages/Library's used
@@ -139,7 +139,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 > <strong><em>!!! its really important that you don't change the name of this file !!!</em></strong><br> 
 >
 > NOTE: If you do want to change the name of the main file of the 
-> plugins follow the steps in the next paragraph.
+> plugins follow the steps in **[this](https://github.com/5m1Ly/5_Pixel_Development_CMS_Base#changing-the-main-file-name-of-plugins)** paragraph.
 >
 > ## Step 5 
 > Open the index.php file there you will find this code...
@@ -203,36 +203,50 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 # Change your project to a plugin
+>
+> ## Step 1
+> Change the name of the main file to index.php
+>
+> ## Step 2 
+> Make sure that external files of the project (all files accept for index.php) are within the project folder 
+>
+> ## Step 3 
+> Simply drag you project folder either to 'root-folder/src/plugins/cms' if it is a admin page or to 'root-folder/src/plugins/site' if it is a user page 
+>
 > if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base you should check out these page's for transforming the project
 >
-> bs v4.x all classes: <br>
-> https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp
->
-> bs v3.x all classes: <br>
-> https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
+> **[bs v4.x all classes](https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp)**<br>
+> **[bs v3.x all classes](https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp)**
 <br>
 
-# Changing the main file and button style of the plugins
+# Changing the main file name of plugins
 > ## Step 1 
 > Go to 'root-folder/base/' and op the 1_menu.php 
 >
 > ## Step 2
-> Here you will find the next code on line 4, 7 & 8 $mainFile contains the name of the main file of any plugin
+> Here you will find the next code on line 4 $mainFile contains the name of the main file of any plugin
 > you can also change the bootstrap classes of the button or add your own classes when you want style them yourself
 >
->     // name of the main file within a plugin folder
 >     $mainFile = '/index.php">';
 > 
->     // html of the button
->     $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
->     $endBtn = '</a></div>';
->
 > NOTE: When changing the main file name<br><strong><em>!!! its really important that you don't remove this (">) piece of the string !!!</em></strong>
 <br>
 
-# Changelog history (\+ added, - removed, ~ changed)
+# Changing the button style within the menu
+> ## Step 1 
+> Go to 'root-folder/base/' and op the 1_menu.php 
 >
-> ## 5 Pixel CMS Base v0.2 - Changelog
+> ## Step 2
+> Here you will find the next code on line 7 & 8 $startBtn contains a div tag with the col bs class which in this case resizes the width of the button this variable also contains the a tag with the bs class btn which formats the basic styling of the button and the class btn-warning which formats the color of the button. then you'll see the w-100 class which in this case sets the button width to a 100% with of the parent in this case col-11 besides these classes it contains the mb-2 class for white space underneath the button.
+>
+>     $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
+>     $endBtn = '</a></div>';
+>
+<br>
+
+# Changelog history
+>
+> ## 5 Pixel CMS Base v0.2 - Changelog (\+ added, - removed, ~ changed)
 > ### 1_menu.php
 >
 >     + function from 'functions.inc.php'
@@ -281,7 +295,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     +     </div>
 >       </div>
 >  
-> ## 5 Pixel CMS Base v0.1 - Changelog
+> ## 5 Pixel CMS Base v0.1 - Changelog (\+ added, - removed, ~ changed)
 >
 >     + the basic folder structure for the dinamic menu
 >     + a role based login/register system to separate 
