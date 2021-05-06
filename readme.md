@@ -1,15 +1,14 @@
 # <strong>5 Pixel Development CMS Base v0.3<strong>
-The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
-
-base currently contains
-- home page
-- cms dashboard
-- role-based login system
-- dynamic menu
-<br>
-
-### Upcoming features/changes
-> Better password encryption
+> The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
+>
+> base currently contains
+> - home page
+> - cms dashboard
+> - role-based login system
+> - dynamic menu
+> 
+> Upcoming features/changes
+> - Better password encryption
 <br>
 
 # Readme content
