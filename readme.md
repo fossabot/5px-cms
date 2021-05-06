@@ -1,4 +1,7 @@
 # <strong>5 Pixel Development CMS Base v0.3<strong>
+<br>
+
+# intro
 > The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
 >
 > base currently contains
