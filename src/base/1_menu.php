@@ -22,10 +22,12 @@
     $cmsDir = 0;
     $siteDir = 1;
 
-    // array with plugin names it need to ignore when logged in
+    // array with plugin names it need to ignore when client is user or admin
     $removeForUser = array('register', 'login', 'template');
-    // array with plugin names it need to ignore when logged in
+
+    // array with plugin names it need to ignore when client is visitor
     $removeForVisitor = array('logout', 'template');
+
     $dontAddPlugin = true;
 
     // gets all the plugin folders form given directory

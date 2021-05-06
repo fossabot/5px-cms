@@ -1,5 +1,34 @@
 <?php
     session_start();
+
+    // returns the directory name 
+    function getCurrentPluginFolder() {
+        $currentDir = array_reverse(explode('\\', getcwd()));
+        return $currentDir[1];
+    }
+
+    // assigns bool, true when client is logged in
+    $id = isset($_SESSION['id']);
+    $loggedIn = true;
+    $loggedOut = false;
+
+    // assigns bool, true when client role is higher then 0
+    $role = isset($_SESSION['uRole']);
+    $isUser = false;
+
+    $currentPluginDir = getCurrentPluginFolder();
+    $cmsPlugins = 'cms';
+    
+    switch ($id) {
+        case $loggedIn:
+            if ($role == $isUser) {
+                if ($currentPluginDir == $cmsPlugins) header('location: ../../site/home/index.php');
+            }
+        break;
+        case $loggedOut:
+            if ($currentPluginDir == $cmsPlugins) header('location: ../../site/login/index.php');
+        break;
+    }
 ?>
 
 <!DOCTYPE html>

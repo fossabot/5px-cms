@@ -1,4 +1,4 @@
-# <strong>5 Pixel Development CMS Base v0.2<strong>
+# <strong>5 Pixel Development CMS Base v0.3<strong>
 The 5 Pixel Development CMS Base is designed to make the life of a web developer a little bit easier
 <br>
 
@@ -178,6 +178,16 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 <br>
 
 # Last changelog
+> ## 5 Pixel CMS Base v0.3 (\+ added, - removed, ~ changed)
+> ### 0_head.php
+>
+>     + function that gets the name of the directory where the current plugin folder is located
+>     + redirect to home plugin when client is logged in but doesn't have admin perms and current plugin is located within the cms directory
+>     + redirect to login plugin when client isn't logged in and current plugin is located within the cms directory
+>
+<br>
+
+# Changelog history
 > ## 5 Pixel CMS Base v0.2 (\+ added, - removed, ~ changed)
 > ### 1_menu.php
 >
@@ -204,7 +214,7 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >
 > ### functions.inc.php
 >
->     - function that was only used by the menu don't see multi purpose at this time
+>     - function that was used by the menu because it didn't work like intended to when executed from menu file 
 >
 > ### register/index.php
 >
@@ -227,9 +237,6 @@ The 5 Pixel Development CMS Base is designed to make the life of a web developer
 >     +     </div>
 >       </div>
 >  
-<br>
-
-# Changelog history
 > ## 5 Pixel CMS Base v0.1 - Changelog (\+ added, - removed, ~ changed)
 >
 >     + the basic folder structure for the dinamic menu
