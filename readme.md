@@ -1,4 +1,4 @@
-# <strong>5 Pixel Development CMS Base v0.3<strong>
+# <strong>5 Pixel Development CMS Base v0.4<strong>
 <br>
 
 # intro
@@ -8,10 +8,10 @@
 > - home page
 > - cms dashboard
 > - role-based login system
-> - dynamic menu
+> - dynamic & responsive menu
 > 
 > Upcoming features/changes
-> - Better password encryption
+> - Better password encryption (This should already be here in v0.4 but where currently working on a script that creates a unique salt for every user)
 <br>
 
 # Readme content
@@ -35,7 +35,7 @@
 > - php v7.4.2
 >
 > ## Library's
-> - Bootstrap v5.0.0 beta3 | **[Docs](https://getbootstrap.com/docs/5.0/)**
+> - Bootstrap v5.0.0 | **[Docs](https://getbootstrap.com/docs/5.0/)**
 > - jQuery v3.6.0 | **[Docs](https://api.jquery.com/)**
 > - Font Awesome v5.15.1 | **[Docs](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)**
 <br>
@@ -84,6 +84,7 @@
 > to read the submitted message within the cms
 > ## Step 3
 > Change the name of the folder because the template folder is ignored when creating menu buttons by default
+> dont forget to add the (num_) in front of the folder otherwise it will try to put a undefined value in the menu
 > ## Step 4
 > In this folder there are a couple of files including a index.php file <br>
 > <strong><em>!!! its really important that you don't change the name of this file !!!</em></strong><br>
@@ -153,9 +154,9 @@
 > ## Step 1
 > Change the name of the main file to index.php
 > ## Step 2 
-> Make sure that external files of the project (all files accept for index.php) are within the project folder
+> Make sure that external files of the project (all files accept for index.php) are within the project folder then change the name of the folder name to num_project-name
 > ## Step 3 
-> Simply drag you project folder either to 'root-folder/src/plugins/cms' if it is a admin page or to 'root-folder/src/plugins/site' if it is a user page 
+> Simply drag your project folder either to 'root-folder/src/plugins/cms' if it is a admin page or to 'root-folder/src/plugins/site' if it is a user page 
 >
 > if you want to turn old projects with bs v3.x or v4.x into a plugin for the 5 Pixel CMS Base you should check out these page's for transforming the project
 >
@@ -181,8 +182,8 @@
 > ## Step 2
 > Here you will find the next code on line 7 & 8 $startBtn contains a div tag with the col bs class which in this case resizes the width of the button this variable also contains the a tag with the bs class btn which formats the basic styling of the button and the class btn-warning which formats the color of the button. then you'll see the w-100 class which in this case sets the button width to a 100% with of the parent in this case col-11 besides these classes it contains the mb-2 class for white space underneath the button.
 >
->     $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
->     $endBtn = '</a></div>';
+>     $startBtn = '<li class="nav-item"><a class="nav-link btn btn-outline-dark me-md-3" aria-current="page" href="';
+>     $endBtn = '</a></li>';
 >
 <br>
 
@@ -196,9 +197,35 @@
 >     $removeForVisitor = array('logout', 'template');
 >
 > Just add the name of the folder you have added to either the cms directory or the site directory and it wont show up when the menu is loaded
+> NOTE: its not necessary to add the (num_) to the name you place within the array
 <br>
 
 # Last changelog
+> ## 5 Pixel CMS Base v0.4 (\+ added, - removed, ~ changed)
+> We the developers of 5 Pixel wanted to implement the cms with in a project for on of our clients and after a few quick test the the menu 
+> didn't work like we wanted to so we made a major change to let it work to our satisfaction. 
+> ### Folder Structure
+> this important is for al the people that already created a plugin. like mentioned above the menu didn't work to our satisfaction because
+> the folders that were changed to menu buttons were sorted alphabetically which gave 0 logic to the menu. so from now on you can sort the
+> buttons by simply adding a character_ to the folder so you are easily able to sort the order of the menu.
+> NOTE: look at the [ascii tabel](http://www.asciitabel.be/) to see how characters are ordered.
+>
+> ### 1_menu.php
+> 
+>     ~ the way the button displays because of the new menu
+>     ~ the way some old functions worked
+>     + if statement to check with the currentDir function if you in the cms or site folder so it will only display the home or dashboard button when your a admin based on you location
+>     + function that splits the folder name on the (_) and returns the name of the of the plugin
+>
+> ### All plugins
+>
+>     ~ the base structure of a web page
+>     - sidebar menu
+>     + menu within the header that changes to dropdown when screen is equal to x width 
+> 
+<br>
+
+# Changelog history
 > ## 5 Pixel CMS Base v0.3 (\+ added, - removed, ~ changed)
 > ### 0_head.php
 >
@@ -206,9 +233,6 @@
 >     + redirect to home plugin when client is logged in but doesn't have admin perms and current plugin is located within the cms directory
 >     + redirect to login plugin when client isn't logged in and current plugin is located within the cms directory
 >
-<br>
-
-# Changelog history
 > ## 5 Pixel CMS Base v0.2 (\+ added, - removed, ~ changed)
 > ### 1_menu.php
 >

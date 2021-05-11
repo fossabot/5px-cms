@@ -4,8 +4,8 @@
     $mainFile = '/index.php">';
 
     // html of the button
-    $startBtn = '<div class="col-11"><a class="btn btn-warning w-100 mb-2" href="';
-    $endBtn = '</a></div>';
+    $startBtn = '<li class="nav-item"><a class="nav-link btn btn-outline-dark me-md-3" aria-current="page" href="';
+    $endBtn = '</a></li>';
 
     // assigns bool, true when client is logged in
     $id = isset($_SESSION['id']);
@@ -26,16 +26,21 @@
     $removeForUser = array('register', 'login', 'template');
 
     // array with plugin names it need to ignore when client is visitor
-    $removeForVisitor = array('logout', 'template');
+    $removeForVisitor = array('register', 'login', 'logout', 'template');
 
     $dontAddPlugin = true;
 
-    // gets all the plugin folders form given directory
+    // gets all the plugin folders from given directory
     function getPlugins($pluginDir) {
         $plugins = scandir($pluginDir);
         $plugins = array_diff($plugins, array('.', '..'));
 
         return $plugins;
+    }
+
+    function removeFirst($plugin) {
+        $arr = explode('_', $plugin);
+        return $arr[1];
     }
 
     // the code that creates the menu with the variables & function above
@@ -49,25 +54,41 @@
 
                                 foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                                    $removeCheck = in_array($plugin, $removeForUser);
-                                    if ($removeCheck == $dontAddPlugin) continue;
+                                    $displayName = removeFirst($plugin);
 
+                                    $currentLocation = getCurrentPluginFolder();
+                                    if ($currentLocation == 'site' && $displayName !== 'dashboard') continue;
+
+                                    $removeCheck = in_array($displayName, $removeForUser);
+                                    if ($removeCheck == $dontAddPlugin) continue;
+        
                                     $link = $pluginDir . $plugin . $mainFile;
-                                    $completeButton = $startBtn . $link . $plugin . $endBtn;
+                                    $completeButton = $startBtn . $link . $displayName . $endBtn;
+        
                                     echo $completeButton;
+        
                                 }
+
                             break;
                             case $siteDir:
 
                                 foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                                    $removeCheck = in_array($plugin, $removeForUser);
-                                    if ($removeCheck == $dontAddPlugin) continue;
+                                    $displayName = removeFirst($plugin);
 
+                                    $currentLocation = getCurrentPluginFolder();
+                                    if ($currentLocation == 'cms' && $displayName !== 'home') continue;
+
+                                    $removeCheck = in_array($displayName, $removeForUser);
+                                    if ($removeCheck == $dontAddPlugin) continue;
+        
                                     $link = $pluginDir . $plugin . $mainFile;
-                                    $completeButton = $startBtn . $link . $plugin . $endBtn;
+                                    $completeButton = $startBtn . $link . $displayName . $endBtn;
+        
                                     echo $completeButton;
+        
                                 }
+                                
                             break;
                         }
                     }
@@ -78,12 +99,16 @@
 
                         foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                            $removeCheck = in_array($plugin, $removeForUser);
+                            $displayName = removeFirst($plugin);
+
+                            $removeCheck = in_array($displayName, $removeForUser);
                             if ($removeCheck == $dontAddPlugin) continue;
 
                             $link = $pluginDir . $plugin . $mainFile;
-                            $completeButton = $startBtn . $link . $plugin . $endBtn;
+                            $completeButton = $startBtn . $link . $displayName . $endBtn;
+
                             echo $completeButton;
+
                         }
                     }
                 break;
@@ -95,12 +120,16 @@
 
                 foreach ($plugins = getPlugins($pluginDir) as $pluginKey => $plugin) {
 
-                    $removeCheck = in_array($plugin, $removeForVisitor);
-                    if ($removeCheck == $dontAddPlugin) continue;
+                            $displayName = removeFirst($plugin);
 
-                    $link = $pluginDir . $plugin . $mainFile;
-                    $completeButton = $startBtn . $link . $plugin . $endBtn;
-                    echo $completeButton;
+                            $removeCheck = in_array($displayName, $removeForVisitor);
+                            if ($removeCheck == $dontAddPlugin) continue;
+
+                            $link = $pluginDir . $plugin . $mainFile;
+                            $completeButton = $startBtn . $link . $displayName . $endBtn;
+                            
+                            echo $completeButton;
+
                 }
             }
         break;
