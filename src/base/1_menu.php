@@ -4,7 +4,7 @@
     $mainFile = '/index.php">';
 
     // html of the button
-    $startBtn = '<li class="nav-item"><a class="nav-link btn btn-outline-dark me-md-3" aria-current="page" href="';
+    $startBtn = '<li class="nav-item"><a class="nav-link btn btn-outline-dark mb-2 me-0 mb-xl-0 me-xl-3" href="';
     $endBtn = '</a></li>';
 
     // assigns bool, true when client is logged in
@@ -26,7 +26,7 @@
     $removeForUser = array('register', 'login', 'template');
 
     // array with plugin names it need to ignore when client is visitor
-    $removeForVisitor = array('register', 'login', 'logout', 'template');
+    $removeForVisitor = array('logout', 'template');
 
     $dontAddPlugin = true;
 

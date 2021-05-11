@@ -31,8 +31,8 @@
                         <div class="row justify-content-around">
 
                             <button class="col-3 btn btn-outline-dark" type="submit" name="submit">Login</button>
-                            <a href="../register/index.php" class="col-3 btn btn-outline-dark">Register</a>
-                            <a href="../home/index.php" class="col-3 btn btn-outline-dark">Home</a>
+                            <a href="../3_register/index.php" class="col-3 btn btn-outline-dark">Register</a>
+                            <a href="../0_home/index.php" class="col-3 btn btn-outline-dark">Home</a>
 
                         </div>
                         

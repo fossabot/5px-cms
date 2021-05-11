@@ -4,5 +4,5 @@
     session_unset();
     session_destroy();
 
-    header("location: ../home/index.php");
+    header("location: ../0_home/index.php");
     exit();

@@ -48,7 +48,7 @@
 
             }
 
-            header("location: ../../home/index.php");
+            header("location: ../../0_home/index.php");
             exit();
 
         }
