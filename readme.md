@@ -10,8 +10,6 @@
 > - role-based login system
 > - dynamic & responsive menu
 > 
-> Upcoming features/changes
-> - Better password encryption (This should already be here in v0.4 but where currently working on a script that creates a unique salt for every user)
 <br>
 
 # Readme content
@@ -201,6 +199,19 @@
 <br>
 
 # Last changelog
+> ## 5 Pixel CMS Base v0.5 (\+ added, - removed, ~ changed)
+> 
+> ### 0_head.php
+>
+>     + dynamically adding css link tags, js script tags, include_once php files within the head tag
+>
+> if you want to add css files you dont need to add link script tags or include php file.
+> from now on you'll need to add a scripts folder within your plugin folder and it automatically adds these
+> note that it only supports .css, .js & .php file extensions
+>
+<br>
+
+# Changelog history
 > ## 5 Pixel CMS Base v0.4 (\+ added, - removed, ~ changed)
 > We the developers of 5 Pixel wanted to implement the cms with in a project for on of our clients and after a few quick test the the menu 
 > didn't work like we wanted to so we made a major change to let it work to our satisfaction. 
@@ -223,9 +234,6 @@
 >     - sidebar menu
 >     + menu within the header that changes to dropdown when screen is equal to x width 
 > 
-<br>
-
-# Changelog history
 > ## 5 Pixel CMS Base v0.3 (\+ added, - removed, ~ changed)
 > ### 0_head.php
 >
