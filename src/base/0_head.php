@@ -63,22 +63,24 @@
 
         <?php 
             
-            foreach ($scriptsArray as $key => $value) {
+            if (isset($scriptsArray)) {
+                foreach ($scriptsArray as $key => $value) {
                 
-                $extension = explode('.', $value);
-
-                switch ($extension[1]) {
-                    case 'css':
-                        echo '<link rel="stylesheet" href="./scripts/'.$value.'">';
-                    break;
-                    case 'js':
-                        echo '<script src="./scripts/'.$value.'"></script>';
-                    break;
-                    case 'php':
-                        include_once './scripts/'.$value;
-                    break;
+                    $extension = explode('.', $value);
+    
+                    switch ($extension[1]) {
+                        case 'css':
+                            echo '<link rel="stylesheet" href="./scripts/'.$value.'">';
+                        break;
+                        case 'js':
+                            echo '<script src="./scripts/'.$value.'"></script>';
+                        break;
+                        case 'php':
+                            include_once './scripts/'.$value;
+                        break;
+                    }
+    
                 }
-
             }
 
         ?>
