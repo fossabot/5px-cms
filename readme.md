@@ -1,4 +1,4 @@
-# <strong>5 Pixel Development CMS Base v0.4<strong>
+# <strong>5 Pixel Development CMS Base v0.5<strong>
 <br>
 
 # intro
