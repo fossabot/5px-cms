@@ -2,20 +2,28 @@
 
 <h1>Login</h1>
 
-
 <?php include_once '../../../base/1_menu.php'; ?>
 
     <div class="container position-absolute top-50 start-50 translate-middle">
 
-        <form action="./php/login.php" method="post">
+        <form id="form" action="./php/login.php" method="post">
             
             <div class="row">
 
+                <div class="col-12 mb-3">
+                    
+                    <?php
+
+                        require_once '../../../inc/msg.php';
+
+                    ?>
+
+                </div>
                 <div class="col-12 col-lg-6 my-3">
                 
                     <div class="form-floating rounded border border-primary">
 
-                        <input class="form-control" id="username" type="text" name="username" placeholder>
+                        <input class="form-control" id="username" type="text" name="username" placeholder require>
                         <label for="username">Username</label>
 
                     </div>
@@ -25,7 +33,7 @@
                 
                     <div class="form-floating rounded border border-primary">
 
-                        <input class="form-control" id="pass" type="password" name="pwd" placeholder>
+                        <input class="form-control" id="pass" type="password" name="pwd" placeholder require>
                         <label for="pass">Password...</label>
 
                     </div>

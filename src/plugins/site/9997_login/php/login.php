@@ -6,12 +6,12 @@
         $pass = $_POST["pwd"];
         
         require_once '../../../../inc/dbh.inc.php';
-        require_once './functions.php';
         require_once '../../../../inc/functions.inc.php';
+        require_once './functions.php';
 
-        if (emptyLoginInput($username, $pass) !== false) {
+        if (emptyInput($_POST) == true) {
 
-            header("location: ../index.php?error=emptyinput");
+            header("location: ../index.php?msg=emptyinput");
             exit();
 
         }

@@ -1,5 +1,12 @@
-    <button class="btn btn-outline-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        menu <i class="fal fa-arrow-alt-circle-down"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="btn-group">
+            <div class="btn btn-outline-primary">
+                menu
+            </div>
+            <div class="btn btn-primary">
+                <i class="fal fa-arrow-alt-circle-down"></i>
+            </div>
+        </div>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -51,10 +58,25 @@
                             $icon = '<i class="fas fa-tachometer-alt-fast"></i>';
                         break;
                         case 'contact':
-                            $icon = '<i class="far fa-address-book"></i>';
+                            $icon = '<i class="far fa-address-card"></i>';
                         break;
                         case 'messages':
                             $icon = '<i class="far fa-comments"></i>';
+                        break;
+                        case 'fotos':
+                            $icon = '<i class="fas fa-camera"></i>';
+                        break;
+                        case 'pakketten':
+                            $icon = '<i class="fas fa-box-open"></i>';
+                        break;
+                        case 'booking':
+                            $icon = '<i class="fas fa-book"></i>';
+                        break;
+                        case 'rental':
+                            $icon = '<i class="far fa-alarm-exclamation"></i>';
+                        break;
+                        case 'klantenbestand':
+                            $icon = '<i class="far fa-address-book"></i>';
                         break;
                         case 'login':
                             $icon = '<i class="fas fa-sign-in-alt"></i>';
@@ -88,13 +110,13 @@
 
                     $nBtnPart1 = '<div class="btn btn-outline-primary">';
                     $nBtnPart2 = $displayName;
-                    $nBtnPart3 = '</div>';
+                    $nBtnPart3 = '</div></div>';
 
                     $nameButton = $nBtnPart1 . $nBtnPart2 . $nBtnPart3;
 
                     $iBtnPart1 = '<div class="btn btn-primary">';
                     $iBtnPart2 = addIcon($displayName);
-                    $iBtnPart3 = '</div></div>';
+                    $iBtnPart3 = '</div>';
 
                     $iconButton = $iBtnPart1 . $iBtnPart2 . $iBtnPart3;
 
@@ -105,7 +127,7 @@
                             $navItemToReturn = $navItem . $redirectTag . $nameButton . $navItemClose;
                         break;
                         default:
-                            $navItemToReturn = $navItem . $redirectTag . $buttonGroup . $nameButton . $iconButton . $navItemClose;
+                            $navItemToReturn = $navItem . $redirectTag . $buttonGroup . $iconButton . $nameButton . $navItemClose;
                         break;
                     }
 

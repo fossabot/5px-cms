@@ -62,17 +62,19 @@
 <br>
 
 # Last changelog
+> ## 5 Pixel CMS Base v1 (\+ added, - removed, ~ changed)
+>
+>     ~ changed and added a lot of things
+>
+<br>
+
+# Changelog history
 > ## 5 Pixel CMS Base v0.6 (\+ added, - removed, ~ changed)
-> 
-> ### 0_head.php
 >
 >     + icons to the menu button
 >     ~ the ui af the applications
 >     ~ some functionality of the menu
 >
-<br>
-
-# Changelog history
 > ## 5 Pixel CMS Base v0.5 (\+ added, - removed, ~ changed)
 > 
 > ### 0_head.php

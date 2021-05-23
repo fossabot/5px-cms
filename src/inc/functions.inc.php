@@ -1,6 +1,29 @@
 <?php
 
-    // used for login and registration
+    /**
+     * Within this script all the globally used functions are placed
+     */
+
+    function emptyInput($posted) {
+        $empty = false;
+        foreach ($posted as $key => $value) {
+            if ($key == 'submit') continue;
+            if ($value !== '') {
+                continue;
+            } else {
+                $empty = true;
+                return $empty;
+            }
+        }
+        return $empty;
+    }
+    
+    function validateInput($inputValue) {
+        $inputValue = htmlspecialchars($inputValue);
+        $inputValue = stripslashes($inputValue);
+        return $inputValue;
+    }
+
     function invalidUsername($name) {
         if (!preg_match("/^[a-zA-Z0-9]*$/", $name)) {
             $result = true;
@@ -11,7 +34,6 @@
         }
     }
 
-    // used for registration (could be used when receiving messages on contact page or something)
     function invalidEmail($email) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $result = true;
@@ -22,7 +44,20 @@
         }
     }
 
-    // used for registration (could also be used when resetting password)
+    function invalidPhoneNumber($phoneNumber) {
+        $length = strlen($phoneNumber);
+        if ($length !== 10) return true;
+    
+        $validCharacterArray = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+        $phoneNumberArray = str_split($phoneNumber);
+    
+        foreach ($phoneNumberArray as $key => $value) {
+            if (!in_array($value, $validCharacterArray)) return true; 
+        }
+
+        return false;
+    }
+
     function invalidPassRepeat($pass, $passRepeat) {
         if ($pass !== $passRepeat) {
             $result = true;
@@ -33,7 +68,6 @@
         }
     }
 
-    // user for login and registration (could also be used when changing profile/username)
     function usernameExists($conn, $name) {
 
         $sql = "SELECT * FROM users WHERE uId = ?;";
@@ -59,7 +93,6 @@
         mysqli_stmt_close($stmt);
     }
 
-    // used for login (could be used for several things)
     function userExists($conn, $rowId) {
 
         $sql = "SELECT * FROM `users` WHERE `id` = ?;";

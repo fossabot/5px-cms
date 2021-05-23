@@ -62,6 +62,8 @@
         <!-- General Styling -->
         <link rel="stylesheet" href="../../../assets/style.css">
 
+        <script src="../../../assets/remove-form.js"></script>
+
         <!-- automatically adds css link tags, js script tags & includes php files once -->
         <?php 
             
@@ -92,4 +94,4 @@
     </head>
     <body class="container-fluid p-0 bg-secondary">
     
-        <nav class="navbar navbar-expand-lg navbar-primary bg-dark ps-3 text-light">
+        <nav class="navbar navbar-expand-xl navbar-primary bg-dark ps-3 text-light">

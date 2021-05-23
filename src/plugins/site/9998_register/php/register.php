@@ -9,40 +9,40 @@
         $role       = 0;
 
         require_once '../../../../inc/dbh.inc.php';
-        require_once './functions.php';
         require_once '../../../../inc/functions.inc.php';
+        require_once './functions.php';
 
-        if (emptyRegisterInput($name, $email, $pass, $passRepeat) !== false) {
+        if (emptyInput($_POST) == true) {
 
-            header("location: ../index.php?error=emptyinput");
+            header("location: ../index.php?msg=emptyinput");
             exit();
 
         }
 
         if (invalidUsername($name) !== false ) {
 
-            header("location: ../index.php?error=invalidusername");
+            header("location: ../index.php?msg=invalidusername");
             exit();
 
         }
         
         if (invalidEmail($email) !== false ) {
 
-            header("location: ../index.php?error=invalidemail");
+            header("location: ../index.php?msg=invalidemail");
             exit();
 
         }
         
         if (invalidPassRepeat($pass, $passRepeat) !== false) {
 
-            header("location: ../index.php?error=passdontmatch");
+            header("location: ../index.php?msg=passdontmatch");
             exit();
 
         }
         
         if (usernameExists($conn, $name) !== false) {
 
-            header("location: ../index.php?error=usernametaken");
+            header("location: ../index.php?msg=usernametaken");
             exit();
 
         }

@@ -2,22 +2,6 @@
 
     require_once '../../../../inc/functions.inc.php';
 
-    function emptyRegisterInput($name, $email, $pass, $passRepeat) {
-
-        if (empty($name) || empty($email) || empty($pass) || empty($passRepeat) ) {
-
-            $result = true;
-            return $result;
-
-        } else {
-
-            $result = false;
-            return $result;
-
-        }
-
-    }
-
     function createUser($conn, $name, $email, $pass, $role) {
         
         $sql = "INSERT INTO users (uId, uEmail, uPass, uRole) VALUES (?, ?, ?, ?);";
@@ -25,7 +9,7 @@
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
 
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../index.php?msg=stmtfailed");
             exit();
 
         }
@@ -36,6 +20,6 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        header("location: ../../1_login/index.php");
+        header("location: ../../9997_login/index.php");
 
     }
