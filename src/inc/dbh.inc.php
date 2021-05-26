@@ -3,7 +3,7 @@
     $serverName = "127.0.0.1";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "5pixel_cms";
+    $dbName = "5pixel_cms_users";
 
     $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 
