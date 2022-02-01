@@ -1,4 +1,6 @@
 # <strong>5 Pixel Development CMS Base v0.6<strong>
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F5m1Ly%2F5px-cms.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2F5m1Ly%2F5px-cms?ref=badge_shield)
+
 <br>
 
 # intro
@@ -169,3 +171,6 @@
 >     + a role based login/register system to separate 
 >       visitors from users and users from admin or mods (mods don't exist by default) 
 >     + easy to use template
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F5m1Ly%2F5px-cms.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F5m1Ly%2F5px-cms?ref=badge_large)
